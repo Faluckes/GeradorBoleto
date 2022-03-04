@@ -6,7 +6,7 @@ namespace GeradorBoleto
     {
         static void Main(string[] args)
         {
-        Boleto boleto = new Boleto(200, "334-3");
+        Boleto boleto = new Boleto(299.99, "334-3");
 
             Console.WriteLine("Data do Boleto: " + boleto.Data);
 
@@ -14,7 +14,7 @@ namespace GeradorBoleto
 
             Console.WriteLine("Número do Boleto: " + boleto.NumeroBoleto);
 
-            Console.WriteLine(boleto.ValorTotal);
+            Console.WriteLine(boleto.ValorTotal.Remove(32, 1));
 
             Console.ReadLine();
         }
