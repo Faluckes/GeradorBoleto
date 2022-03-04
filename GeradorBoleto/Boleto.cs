@@ -20,10 +20,11 @@ namespace GeradorBoleto
 
         private string _valortotal;
 
-        public Boleto(double valorboleto, string numerobanco)
+        public Boleto(string numerobanco, double valorboleto)
         {
             ValorBoleto = valorboleto;
             NumeroBanco = numerobanco;
+
             Data = DateTime.Now.ToString("dd/MM/yyyy");
 
 
@@ -40,7 +41,7 @@ namespace GeradorBoleto
         {
             get
             {
-                return string.Concat(NumeroBanco + " | " + NumeroBoleto + DateTime.Now.ToString("ddMMyyyy") + NumeroGrande + ValorBoleto);
+                return string.Concat(" | " + NumeroBanco + " | " + NumeroBoleto + DateTime.Now.ToString("ddMMyyyy") + NumeroGrande + ValorBoleto.ToString().Replace(",", ""));
             }
             set
             {
